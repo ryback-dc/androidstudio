@@ -1,0 +1,44 @@
+Tahap Persipan
+
+Sebelum memulai ada kiranya pembaca memenuhi beberapa persyaratan di bawah ini:
+
+ 1. Memiliki kuota internet yang besar, penulis asumsikan sekitar kurang lebih 2 GB, hemat penulis akan lebih aman Anda memiliki kutota lebih. Mengapa? Tutorial ini banyak sekali menggunakan internet, selain digunakan untuk unduh Android Studio, juga digunakan untuk memasang dependensi lainnya yang diperlukan agar Android Studio ini dapat berjalan dengan sebagaimana mestinya.
+ 2. Pastikan Anda sudah meng-upgrade Ubuntu Anda. Bisa dilakukan dengan cara sudo apt-get dist-upgrade.
+ 3. Disarankan menggunakan Oracle JDK. Jika Anda sudah terlanjur memasang OpenJDK tidak masalah, akan tetapi Android Studio lebih menyarankan menggunakan Oracle JDK.
+ 
+ 
+Pertama-tama kita pasang (install) Oracle JDK. Perlu diketahui bahwa Oracle JDK ini tidak ada lama lumbung resmi (official repository) maka perlu ditambahkan PPA nya:
+ 
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+
+Kemudian, selanjutnya kita pasang dependensi yang diperlukan oleh Android Studio itu sendiri yakni:
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
+
+
+Lalu yang terakhir unduh Android Studio di laman resminya di:
+https://developer.android.com/studio/index.html#tos-header
+
+
+Cara mudah membuat shortcut Android Studio adalah pertama-tama Anda buat dalu berkas bernama misalnya androidstudio.desktop. Lalu, isi skrip seperti di bawah ini:
+
+[Desktop Entry]
+Name=Android Studio
+GenericName=Android Studio
+Comment=Android Studio
+Keywords=IDE;development;programming;
+Exec=sh direktori_android_studio/bin/studio.sh
+Icon= direktori_android_studio/bin/studio.png
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=GNOME;GTK;Development;IDE;
+
+
+Kemudian taru berkas androidstudio.desktop tersebut di /usr/share/applications. Caranya:
+sudo mv androidstudio.desktop /usr/share/applications/
+
+
+
